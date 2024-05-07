@@ -1,0 +1,21 @@
+services:
+  sat_exporter:
+    image: sat_exporter:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /home/ploi/containers/reforger/data/serverfiles/profiles/eu_1/profile/ServerAdminTools_Stats.json:/app/ServerAdminTools_Stats.json
+    ports:
+      - "9840:9840"
+    command: >
+      ./server
+      -listen=0.0.0.0:9840
+      -f=/app/ServerAdminTools_Stats.json
+      -l=server=EU3
+    networks:
+      - monitor-net
+
+networks: 
+    monitor-net: 
+        external: true

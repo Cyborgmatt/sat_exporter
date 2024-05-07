@@ -25,7 +25,7 @@
           "uid": "000000001"
         },
         "enable": true,
-        "expr": "rate(reforger_sat_exporter_uptime_seconds[$__interval])<0.8",
+        "expr": "rate(reforger_sat_exporter_uptime_seconds_total[$__interval])<0.8",
         "iconColor": "red",
         "name": "Restarts",
         "step": ""

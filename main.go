@@ -88,7 +88,7 @@ func newJSONCollector(namespace string, labels, values []string) prometheus.Coll
 		RegGroups: prometheus.NewDesc(
 			namespace+"_registered_groups", "Total number of registered groups", labels, nil),
 		Uptime: prometheus.NewDesc(
-			namespace+"_uptime_seconds", "Server uptime in seconds", labels, nil),
+			namespace+"_uptime_seconds_total", "Server uptime in seconds", labels, nil),
 		AIChars: prometheus.NewDesc(
 			namespace+"_ai_characters", "Total number AI characters", labels, nil),
 		RegTasks: prometheus.NewDesc(
